@@ -54,6 +54,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.busschedule.BusScheduleApplication
 import com.example.busschedule.R
 import com.example.busschedule.data.BusSchedule
 import com.example.busschedule.ui.theme.BusScheduleTheme
@@ -68,7 +69,7 @@ enum class BusScheduleScreens {
 @Composable
 fun BusScheduleApp(
     modifier: Modifier = Modifier,
-    viewModel: BusScheduleViewModel = viewModel(factory = BusScheduleViewModel.factory)
+    viewModel: BusScheduleViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
     val navController = rememberNavController()
     val fullScheduleTitle = stringResource(R.string.full_schedule)
